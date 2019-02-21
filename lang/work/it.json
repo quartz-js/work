@@ -1,0 +1,16 @@
+{
+  "$quartz": {
+    "data": {
+      "work": {
+        "name": "Work",
+        "description": "Work",
+        "attributes": {
+          "name": {
+            "label": "name",
+            "description": "Identify the record by a human-readable string"
+          }
+        }
+      }
+    }
+  }  
+}
