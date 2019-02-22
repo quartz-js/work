@@ -6,19 +6,5 @@
       <q-show-text :resource="scope.resource" :attribute="scope.config.getAttribute('data')" />
       <q-show-text :resource="scope.resource" :attribute="scope.config.getAttribute('payload')" />
     </template>
-    <template slot='actions' slot-scope="scope">
-      <edit :resource="scope.resource" v-bind="$attrs"/>
-    </template>
   </q-resource-show>
 </template>
-
-<script>
-
-import Edit from './edit'
-
-export default {
-  components: {
-    Edit
-  }
-}
-</script>
