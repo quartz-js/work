@@ -3,19 +3,12 @@ import { container } from '@railken/quartz-core'
 
 export class WorkServiceProvider extends ServiceProvider {
   register() {
-
-    this.addRoutes('app', require('./../../routes/work.js'))
-
-    this.addData({
-      name: 'work',
-      icon: require('../../assets/work-icon.svg'),
-      tags: ['system'],
-      route: { name: 'works.index' },
-    })
+    this.registerComponent("DataViewRenderer", require('../../components/DataViewRenderer').default)
+    this.registerComponent("DataViewExecutor", require('../../components/DataViewExecutor').default)
 
     this.addLang({
-      'en': require('../../../lang/work/en.json'),
-      'it': require('../../../lang/work/it.json')
+      'en': require('../../../lang/en.json'),
+      'it': require('../../../lang/it.json')
     })
   }
 }
