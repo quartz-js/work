@@ -44,7 +44,6 @@ export default {
   methods: {
     generate (data) {
       this.report.errors = []
-      console.log(this.manager)
 
       this.manager.manager.post('/' + this.resource.id + '/execute', { data: data })
         .then(response => {
