@@ -2,8 +2,8 @@
   "$quartz": {
     "work": {
       "executor": {
-        "title": "Executor",
-        "action": "Execute"
+        "title": "Esecutore",
+        "action": "Esegui"
       }
     }
   }
