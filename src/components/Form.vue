@@ -17,13 +17,15 @@
             full-width
             min-width="290px"
           >
+          <template v-slot:activator="{ on }">
             <v-text-field
-              slot="activator"
+              v-on="on"
               v-model="form[name]"
               :label="name"
               clearable
               readonly
             ></v-text-field>
+          </template>
             <v-date-picker
               v-model="form[name]"
               @change="menu[name] = false"

@@ -1,17 +1,17 @@
 <template>
   <div class="c" v-if="resource">
     <v-dialog v-model="showDialog" width="500">
-      <slot name='activator' slot="activator">
-        <v-btn color="primary" flat icon class='ma-0 mx-1' small><v-icon size=19>fas fa-upload</v-icon></v-btn>
-      </slot>
-      <v-card>
+      <template v-slot:activator="{ on }">
+        <v-btn  v-on="on" color="primary" flat icon class='ma-0 mx-1' small><v-icon size=19>fas fa-upload</v-icon></v-btn>
+      </template>
+      <q-card>
         <v-card-title class="headline grey lighten-2" primary-title>{{ $t('$quartz.work.executor.title')}}</v-card-title>
         <data-builder-form class='content' :dataBuilder="resource.data_builder" :form="report.form" :errors="report.errors" />
         <v-card-actions>
           <v-spacer></v-spacer>
           <v-btn primary @click="generate(report.form)">{{ $t('$quartz.work.executor.action') }}</v-btn>
         </v-card-actions>
-      </v-card>
+      </q-card>
     </v-dialog>
   </div>
 </template>
