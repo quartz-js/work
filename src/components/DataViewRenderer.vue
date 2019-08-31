@@ -50,7 +50,6 @@ export default {
         this.manager.manager.post('/render', params).then(response => {
           this.rendered = response.body.resource.body
         }).catch(response => {
-          console.log(response);
 
           if (response.status === 400) {
             this.report.errors = response.body.errors
