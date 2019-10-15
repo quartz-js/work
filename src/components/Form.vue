@@ -9,6 +9,8 @@
     <div v-for="attr,name in $root.parseYaml(dataBuilder.input)"  class="form-group">
         <v-text-field v-if="attr.type === 'text'" :label="name" v-model="form[name]"></v-text-field>
         <v-text-field v-if="attr.type === 'integer' || attr.type === 'int'" :label="name" v-model="form[name]"></v-text-field>
+        <v-textarea v-if="attr.type === 'textarea'" :label="name" v-model="form[name]"></v-textarea>
+        <v-select v-if="attr.type === 'enum'" :label="name" v-model="form[name]" :items="attr.options"></v-select>
 
         <div v-if="attr.type === 'date'">
           <v-menu
